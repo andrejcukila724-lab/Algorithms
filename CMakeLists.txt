@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 20)
 include_directories(include)
 
 add_executable(grad src/grad.cpp)
-add_executable(nab src/NAB.cpp)
+add_executable(nab src/nab.cpp)
 add_executable(test_array tests/test_array.cpp)
 
 enable_testing()
@@ -40,7 +40,7 @@ set_tests_properties(
 )
 add_test(
         NAME nab_test1
-        COMMAND NAB ${CMAKE_SOURCE_DIR}/tests/test_nab1.txt
+        COMMAND nab ${CMAKE_SOURCE_DIR}/tests/test_nab1.txt
 )
 set_tests_properties(
         nab_test1
@@ -50,7 +50,7 @@ set_tests_properties(
 )
 add_test(
         NAME nab_test2
-        COMMAND NAB ${CMAKE_SOURCE_DIR}/tests/test_nab2.txt
+        COMMAND nab ${CMAKE_SOURCE_DIR}/tests/test_nab2.txt
 )
 set_tests_properties(
         nab_test2
@@ -60,7 +60,7 @@ set_tests_properties(
 )
 add_test(
         NAME nab_test3
-        COMMAND NAB ${CMAKE_SOURCE_DIR}/tests/test_nab3.txt
+        COMMAND nab ${CMAKE_SOURCE_DIR}/tests/test_nab3.txt
 )
 set_tests_properties(
         nab_test3
