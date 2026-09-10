@@ -16,11 +16,11 @@ int main(int argc, char* argv[] ) {
     size_t n;
     input >> n;
     Array<int> nab(n);
-    for ( int i = 0; i < n; i++) {
+    for (size_t i = 0; i < n; i++) {
         input>>nab[i];
     }
     int lista[1001] = {};
-    for (int i = 0 ; i< n ; i++) {
+    for (size_t i = 0 ; i< n ; i++) {
         lista[nab[i]]++;
     }
     int bes = 0 , count = 0 ;

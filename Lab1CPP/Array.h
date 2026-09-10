@@ -16,13 +16,13 @@ public:
         delete[] arr;
     }
     T& operator[](size_t index ) {
-        if (index < 0 || index >= size) {
+        if (index >= size) {
             throw out_of_range("Index out of range");
         }
         return arr[index];
     }
     const T& operator[](size_t index ) const {
-        if (index < 0 || index >= size) {
+        if (index >= size) {
             throw out_of_range("Index out of range");
         }
         return  arr[index];
@@ -32,7 +32,7 @@ public:
     }
     Array(const Array& other) : size(other.size){
         arr = new T[other.size];
-        for (int i = 0 ; i < other.size; i++) {
+        for (size_t i = 0 ; i < other.size; i++) {
             arr[i] = other.arr[i];
         }
     }
@@ -49,7 +49,7 @@ public:
             copySize = size;
         }
 
-        for (int i = 0; i < copySize; i++) {
+        for (size_t i = 0; i < copySize; i++) {
             arr[i] = other.arr[i];
         }
 
