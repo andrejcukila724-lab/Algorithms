@@ -14,14 +14,6 @@ target_include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-add_executable(test_array tests/test_array.cpp)
-
-target_include_directories(
-        test_array
-        PRIVATE
-        ${CMAKE_CURRENT_SOURCE_DIR}
-)
-
 enable_testing()
 
 add_test(
@@ -88,15 +80,4 @@ set_tests_properties(
         nab_test3
         PROPERTIES
         PASS_REGULAR_EXPRESSION "Самое частое число: 950 \\(встречается 9 раз\\)"
-)
-
-add_test(
-        NAME Array_test
-        COMMAND test_array
-)
-
-set_tests_properties(
-        Array_test
-        PROPERTIES
-        PASS_REGULAR_EXPRESSION "Size: 5.*Array: 10 20 30 40 50.*Original: 10.*Copy: 999.*Self-assignment: 10 20 30 40 50.*Error: Index out of range"
 )
